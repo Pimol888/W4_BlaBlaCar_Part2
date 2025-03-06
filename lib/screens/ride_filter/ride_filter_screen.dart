@@ -1,5 +1,5 @@
 import 'package:blabla_part2/screens/ride_filter/widget/checkbox_detail.dart';
-import 'package:blabla_part2/screens/ride_filter/widget/sort.dart';
+import 'package:blabla_part2/screens/ride_filter/widget/sortbytile.dart';
 import 'package:flutter/material.dart';
 import '../../service/filture_service.dart';
 import '../../service/rides_service.dart';
@@ -57,13 +57,18 @@ class _RideFilterScreenState extends State<RideFilterScreen> {
             )
             ,SizedBox(height: BlaSpacings.xl,),
             Text("Filter",style: BlaTextStyles.heading.copyWith(fontWeight: FontWeight.bold,color: BlaColors.neutral),),
+            
             SizedBox(height: BlaSpacings.xxl,),
             Text("Sort by",style: BlaTextStyles.title.copyWith(fontWeight: FontWeight.bold,color: BlaColors.neutral),),
+            
             SortByTile(onPressed: onPressedSortByTile, selectedSortType: currentSortType,),
+            
             BlaDivider(),
             Text("Details",style: BlaTextStyles.title.copyWith(color: BlaColors.neutral),),
+            
             SizedBox(height: BlaSpacings.xxl,),
             DetailCheckBox(initRidesFilter: currentFilter,onPressed: onPressedFilter),
+            
             SizedBox(height: BlaSpacings.xxl,),
             BlaButton(
               type: ButtonType.primary,
@@ -79,8 +84,7 @@ class _RideFilterScreenState extends State<RideFilterScreen> {
                 Navigator.pop(context);
               },
               )
-
-
+       
           ],
         ),
       ),
